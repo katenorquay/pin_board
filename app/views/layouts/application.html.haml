@@ -21,9 +21,7 @@
           %li= link_to "Gallery", new_user_session_path
           %li= link_to "Blog", new_user_session_path
           %li= link_to "Contact", new_user_session_path
-  .header
-    .header-pic
-      %h1 Tess Norquay
+
   .container
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "alert alert-info"
