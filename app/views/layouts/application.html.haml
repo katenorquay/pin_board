@@ -9,8 +9,8 @@
   %nav.navbar.navbar-default
     .container
       .navbar-brand
-        %a{ :href => "#", :class => "hello"}
-          =image_tag "foot.png"
+        %a{ :href => root_path, :class => "logo-container"}
+          =image_tag "foot.png", :class => "logo"
           %h3 Tess Norquay
 
       - if user_signed_in?
@@ -29,5 +29,4 @@
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "alert alert-info"
     = yield
-    =image_tag "foot.png", :class => "sponsor"
   .footer
