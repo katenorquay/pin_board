@@ -25,6 +25,13 @@
     src: local('LemonMilk'), local('LemonMilk'), url('LemonMilk.otf') format('truetype')
   }
 
+  @font-face {
+     font-family: 'Apercu-Mono';
+     font-style: normal;
+     font-weight: 700;
+     src: local('Apercu-Mono'), local('Apercu-Mono'), url('Apercu-Mono.otf') format('truetype')
+   }
+
  body {
    background-image: url('grid-crop.png');
 }
@@ -55,21 +62,26 @@
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 100;
+  font-family: Apercu-Mono;
 }
 
 nav {
 	box-shadow: 0 1px 2px 0 rgb(163, 0, 204);
   height: 80px;
+  box-sizing: border-box;
 	.navbar-brand {
-		a {
-			color: white;
-			font-weight: bold;
-      font-size: 22px;
+		img {
+      width: 70px;
+      transform: rotate(-25deg);
 			&:hover {
 				text-decoration: none;
 			}
 		}
 	}
+}
+
+.hello {
+  display: inline-block;
 }
 
 nav.navbar.navbar-default {
@@ -83,6 +95,7 @@ nav.navbar.navbar-default li > a {
   letter-spacing: 1px;
   font-size: 16px;
   padding-left: 25px;
+  font-family: Apercu-Mono;
 }
 
 .footer {
@@ -90,7 +103,9 @@ nav.navbar.navbar-default li > a {
   border-top: 1px solid #e7e7e7;
   width: 100%;
   height: 200px;
-  background-color: #a300cc;
+  background-image: url('1.jpg');
+  background-repeat: repeat;
+  background-size: 350px;
   margin-top: 80px;
 }
 
@@ -103,6 +118,8 @@ nav.navbar.navbar-default li > a {
 	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 	  border-radius: 7px;
 	  text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
 	  img {
 	  	max-width: 100%;
 	  	height: auto;
@@ -183,10 +200,25 @@ textarea {
 h1 {
   text-align: center;
   margin-top: 25%;
-  font-size: 150px;
+  font-size: 120px;
   color: white;
-  font-family: font-face;
+  font-family: LemonMilk;
   text-transform: uppercase;
+}
+
+h2 {
+  font-family: LemonMilk;
+}
+
+.button {
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  background-color: #a300cc;
+  font-family: LemonMilk;
+  color: white;
+  font-size: 25px;
 }
 
 .ball {
@@ -197,13 +229,13 @@ h1 {
   box-shadow: inset -5px -5px 5px rgba(0,0,0,.6), 15px 15px 2px rgba(0,0,0,.04);
   position: absolute;
   @-webkit-keyframes moveX {
-    from { left: 0; } to { left: 100%; }
+    from { left: 0; } to { left: 95%; }
   }
   @-moz-keyframes moveX {
-    from { left: 0; } to { left: 100%; }
+    from { left: 0; } to { left: 95%; }
   }
   @keyframes moveX {
-    from { left: 0; } to { left: 100%; }
+    from { left: 0; } to { left: 95%; }
   }
 
   -webkit-animation: moveX 5s linear 0s infinite alternate;
