@@ -9,9 +9,7 @@
   %nav.navbar.navbar-default
     .container
       .navbar-brand
-        %a{ :href => root_path, :class => "logo-container"}
-          =image_tag "foot.png", :class => "logo"
-          %h3 Tess Norquay
+        = link_to image_tag( 'handgesture.png'), root_path
 
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
