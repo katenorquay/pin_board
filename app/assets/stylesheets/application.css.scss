@@ -49,6 +49,13 @@
   display: inline-block;
   color: white;
   position: relative;
+  z-index: -999;
+}
+
+.collections {
+  color: black;
+  margin-top: -30px;
+  z-index: 999;
 }
 
 .profile-pic {
@@ -229,7 +236,6 @@ h2 {
 
 .leg {
   margin-left: 20px;
-
 }
 
 .ball {

@@ -19,6 +19,7 @@
     =image_tag "foot.png", :class => "leg"
     %a{ :href => "#", :class => "button"}Contact Me
 #pins-gallery
+  %h1{:class => "collections"}Collections
   #pins.transitions-enabled
     - @pins.each do |pin|
       .box.panel.panel-default
