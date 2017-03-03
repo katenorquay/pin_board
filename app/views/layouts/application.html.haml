@@ -18,9 +18,10 @@
             %li= link_to "Sign Out", destroy_user_session_path, method: :delete
         - else
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to "About", new_user_registration_path
-            %li= link_to "Gallery", new_user_session_path
-            %li= link_to "Blog", new_user_session_path
+            %li= link_to "About", pins_path(anchor: 'about-body')
+            %li= link_to "Gallery", pins_path(anchor: 'pins-gallery')
+            %li
+              %a(href="http://www.medium.com") Blog
             %li= link_to "Contact", new_user_session_path
 
     .container

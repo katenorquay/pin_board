@@ -10,7 +10,7 @@
   =image_tag "horton.jpg", :class => "ball ball-animation9"
   =image_tag "horton.jpg", :class => "ball ball-animation10"
   %h1 Tess Norquay
-.about-body
+#about-body
   =image_tag "tess.jpg", :class => "profile-pic"
   .about-text
     %h2 Hi, I'm Tess Norquay
@@ -18,9 +18,10 @@
     =image_tag "leg.png", :class => "leg"
     =image_tag "foot.png", :class => "leg"
     %a{ :href => "#", :class => "button"}Contact Me
-#pins.transitions-enabled
-  - @pins.each do |pin|
-    .box.panel.panel-default
-      = link_to (image_tag pin.image.url), pin
-      .panel-body
-        %h2= link_to pin.title, pin
+#pins-gallery
+  #pins.transitions-enabled
+    - @pins.each do |pin|
+      .box.panel.panel-default
+        = link_to (image_tag pin.image.url), pin
+        .panel-body
+          %h2= link_to pin.title, pin
