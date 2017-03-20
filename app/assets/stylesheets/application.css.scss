@@ -291,11 +291,6 @@ h2 {
 }
 
 .ball-animation5 {
-  animation: moveX 6.05s linear 0s infinite alternate,
-  moveY 1.4s linear 0s infinite alternate;
-}
-
-.ball-animation5 {
   animation: moveX 2.05s linear 0s infinite alternate,
   moveY 5.4s linear 0s infinite alternate;
 }
@@ -318,4 +313,9 @@ h2 {
 .ball-animation9 {
   animation: moveX 7.05s linear 0s infinite alternate,
   moveY 3.4s linear 0s infinite alternate;
+}
+
+.ball-animation10 {
+  animation: moveX 6.05s linear 0s infinite alternate,
+  moveY 1.4s linear 0s infinite alternate;
 }
