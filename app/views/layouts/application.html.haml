@@ -4,6 +4,7 @@
     %title Tess Norquay
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-default
@@ -20,8 +21,6 @@
           %ul.nav.navbar-nav.navbar-right
             %li= link_to "About", pins_path(anchor: 'about-body')
             %li= link_to "Gallery", pins_path(anchor: 'pins-gallery')
-            %li
-              %a(href="http://www.medium.com") Blog
             %li= link_to "Contact", new_user_session_path
 
     .container
