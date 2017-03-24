@@ -10,8 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require 'masonry/transitions'
  *= require 'masonry/basic'
+ *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
  */
@@ -123,8 +123,8 @@ nav.navbar.navbar-default li > a {
   margin: 0 auto;
   width: 100%;
   .box {
-	  margin: 10px;
-	  width: 350px;
+	  // margin: 10px;
+	  width: 320px;
 	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 	  border-radius: 7px;
 	  text-align: center;
