@@ -161,8 +161,9 @@ nav.navbar.navbar-default li > a {
 }
 
 #pin_show {
+  margin-top: 25px;
 	.panel-heading {
-		padding: 0;
+    padding: 20px;
 	}
 	.pin_image {
 		img {
@@ -172,15 +173,11 @@ nav.navbar.navbar-default li > a {
 			margin: 0 auto;
 		}
 	}
-	.panel-body {
-		padding: 35px;
-		h1 {
-			margin: 0 0 10px 0;
-		}
+	.panel-content {
+    margin: 25px;
 		.description {
 			color: #868686;
 			line-height: 1.75;
-			margin: 0;
 		}
 	}
 	.panel-footer {
@@ -192,6 +189,14 @@ nav.navbar.navbar-default li > a {
 			padding-top: 8px;
 		}
 	}
+}
+
+.show-title {
+  color: #474747;
+  font-size: 30px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 textarea {

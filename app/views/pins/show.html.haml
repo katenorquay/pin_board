@@ -3,9 +3,9 @@
     .panel.panel-default
       .panel-heading.pin_image
         = image_tag @pin.image.url
-      .panel-body
-      %h1= @pin.title
-      %p.description= @pin.description
+      .panel-content
+        %h1.show-title= @pin.title
+        %p.description= @pin.description
       .panel-footer
         .row
           .col-md-6
