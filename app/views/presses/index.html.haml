@@ -1,0 +1,6 @@
+#presses-gallery
+  #presses.transitions-enabled
+    - @presses.each do |press|
+      .box.panel.panel-default
+        .panel-body
+          %h2= link_to press.link, press

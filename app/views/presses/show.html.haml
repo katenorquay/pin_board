@@ -1,0 +1,13 @@
+#pin_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading.pin_image
+      .panel-content
+        %h1.show-title= @press.link
+      .panel-footer
+        .row
+          .col-md-6
+          - if user_signed_in?
+            .btn-group.pull-right
+              = link_to "Edit", edit_press_path, class: "btn btn-default"
+              = link_to "Delete", press_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"

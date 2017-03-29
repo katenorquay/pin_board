@@ -1,0 +1,14 @@
+= simple_form_for @press, html: { multipart: true } do |f|
+	- if @press.errors.any?
+		#errors
+			%h2
+				= pluralize(@press.errors.count, "error")
+				prevented this Press from saving
+			%ul
+				- @press.errors.full_messages.each do |msg|
+					%li= msg
+
+	.form-group
+		= f.input :link, input_html: { class: 'form-control' }
+
+	= f.button :submit, class: "btn btn-primary"
