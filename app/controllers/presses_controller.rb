@@ -38,14 +38,12 @@ class PressesController < ApplicationController
     redirect_to root_path
   end
 
-  private
-
+private
   def press_params
-    params.require(:press).permit(:link)
+    params.require(:press).permit(:title, :link, :image)
   end
 
   def find_press
     @press = Press.find(params[:id])
   end
-
 end

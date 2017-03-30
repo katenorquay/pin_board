@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'pg'
 gem 'rails', '~> 5.0.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -23,13 +24,12 @@ gem 'masonry-rails', '~> 0.2.1'
 gem 'jquery-turbolinks'
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
+  # gem 'sqlite3'
   gem 'byebug', platform: :mri
   gem 'foreman'
 end
