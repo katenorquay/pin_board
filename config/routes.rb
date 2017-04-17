@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :media
   devise_for :users
-  resources :pins, :presses
+  resources :pins
 
   root"pins#index"
 end

@@ -1,0 +1,9 @@
+%h1.press-title In the Press
+#pins-gallery
+  #pins.transitions-enabled
+    - @media.each do |singlemedia|
+      .box.panel.panel-default
+        = image_tag singlemedia.image.url
+        .panel-body
+          %h2= singlemedia.title
+          %h4= singlemedia.description

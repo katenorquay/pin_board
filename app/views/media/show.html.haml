@@ -1,0 +1,15 @@
+#pin_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading.medium_image
+        = image_tag @medium.image.url
+      .panel-content
+        %h1.show-title= @medium.title
+        %p.description= @medium.description
+      .panel-footer
+        .row
+          .col-md-6
+          - if user_signed_in?
+            .btn-group.pull-right
+              = link_to "Edit", edit_medium_path, class: "btn btn-default"
+              = link_to "Delete", medium_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"

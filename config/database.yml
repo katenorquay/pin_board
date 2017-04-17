@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: testdb
+  database: postgres
   host: localhost
   pool: 5
   username: postgres
@@ -10,7 +10,7 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: testdb
+  database: postgres
   pool: 5
   username: postgres
   password: postgres

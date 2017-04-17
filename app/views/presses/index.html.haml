@@ -1,7 +1,0 @@
-#pins-gallery
-  #pins.transitions-enabled
-    - @presses.each do |press|
-      .box.panel.panel-default
-        = link_to (image_tag press.image), press
-        .panel-body
-          %h2= link_to press.title, press
