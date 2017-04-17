@@ -4,9 +4,8 @@ class MediaController < ApplicationController
   # GET /media
   # GET /media.json
   def index
-    @media = Medium.all
+    @media = Medium.all.order("created_at DESC")
   end
-
   # GET /media/1
   # GET /media/1.json
   def show
