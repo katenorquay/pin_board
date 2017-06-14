@@ -1,76 +1,76 @@
-var canvas = {
-    element: document.getElementById('canvas'),
-    width: 600,
-    height: 800,
-    initialize: function () {
-        this.element.style.width = this.width + 'px';
-        this.element.style.height = this.height + 'px';
-        document.body.appendChild(this.element);
-    }
-};
+// Bouncing Balls. By Rob Glazebrook
+// The balls are randomized in size, color, opacity, and bounce direction. They'll bounce off the walls of their container and generally make a rather pretty show of things.
 
-var Ball = {
-    create: function (color, dx, dy, margin) {
-        var newBall = Object.create(this);
-        newBall.dx = dx;
-        newBall.dy = dy;
-        newBall.width = 40;
-        newBall.height = 40;
-        newBall.element = document.createElement('div');
-        newBall.element.style.backgroundColor = color;
-        newBall.element.style.width = newBall.width + 'px';
-        newBall.element.style.height = newBall.height + 'px';
-        newBall.element.style.marginLeft = margin + 'px';
-        newBall.element.className += ' ball';
-        newBall.width = parseInt(newBall.element.style.width);
-        newBall.height = parseInt(newBall.element.style.height);
-        canvas.element.appendChild(newBall.element);
-        return newBall;
-    },
-    moveTo: function (x, y) {
-        this.element.style.left = x + 'px';
-        this.element.style.top = y + 'px';
-    },
-    changeDirectionIfNecessary: function (x, y) {
-        if (x < 0 || x > canvas.width - this.width) {
-            this.dx = -this.dx;
-        }
-        if (y < 0 || y > canvas.height - this.height) {
-            this.dy = -this.dy;
-        }
-    },
-    draw: function (x, y) {
-        this.moveTo(x, y);
-        var ball = this;
-        setTimeout(function () {
-            ball.changeDirectionIfNecessary(x, y);
-            ball.draw(x + ball.dx, y + ball.dy);
-        }, 1000 / 60);
-    }
-};
+var ballCount = 20,
+    ballMinSize = 40,
+    ballMaxSize = 125,
+    container = $('.balls');
 
-canvas.initialize();
-var ball1 =  Ball.create("blue", 0, 5, 400);
-var ball2 =  Ball.create("red", 1, 5, 100);
-var ball3 =  Ball.create("green", 2, 2, 40);
-var ball4 =  Ball.create("blue", 2, 3, 500);
-var ball5 =  Ball.create("red", 3, 5, 50);
-var ball6 =  Ball.create("green", 2, 4, 500);
-var ball7 =  Ball.create("blue", 4, 2, 60);
-var ball8 =  Ball.create("red", 1, 3, 80);
-var ball9 =  Ball.create("green", 1, 2, 200);
-var ball10 =  Ball.create("blue", 5, 4, 300);
-var ball11 =  Ball.create("red", 2, 5, 400);
-var ball12 =  Ball.create("green", 3, 4, 600);
-ball1.draw(600, 600);
-ball2.draw(20, 200);
-ball3.draw(300, 330);
-ball4.draw(80, 0);
-ball5.draw(30, 200);
-ball6.draw(400, 330);
-ball7.draw(100, 0);
-ball8.draw(60, 200);
-ball9.draw(250, 330);
-ball10.draw(20, 100);
-ball11.draw(60, 150);
-ball12.draw(300, 380);
+$(function() {
+  initBalls();
+  balls = window.setInterval(moveBalls,40); // 24 FPS
+  $(window).resize(function() { moveBallsIntoBounds(); });
+});
+
+// Random number generator. Takes a minimum, maximum, and a boolean for whether the random number should be an integer.
+function rand(min,max,isInt) {
+  var min = min || 0,
+      max = max || 1,
+      isInt = isInt || false,
+      num = Math.random()*(max - min) + min;
+  return (isInt) ? Math.round(num) : num;
+}
+
+// Creates the balls, puts them in the container, and gives them a random size, color, opacity, starting location, and direction/speed of movement.
+function initBalls() {
+  container.css({'position':'relative'});
+  for (i=0;i<ballCount;i++) {
+    var newBall = $('<b />').appendTo(container),
+        size = rand(ballMinSize,ballMaxSize);
+    newBall.css({
+      'position':'absolute',
+      'width': size+'px',
+      'height': size+'px',
+      'opacity': rand(.1,.8),
+      'background-color': 'rgb('+rand(0,255,true)+','+rand(0,255,true)+','+rand(0,255,true)+')',
+      'top': rand(0,container.height()-size),
+      'left': rand(0,container.width()-size)
+    }).attr({
+      'data-dX':rand(-10,10),
+      'data-dY':rand(1,10)
+    });
+  }
+}
+
+// Moves the balls based on their direction/speed of movement (saved as a data attribute). If the movement will take them outside of the container, they reverse direction along that axis.
+function moveBalls() {
+  var maxX = container.width(),
+      maxY = container.height();
+  $('b',container).each(function(i,b) {
+    var ball = $(b),
+        pos = ball.position()
+        x = pos.left,
+        y = pos.top,
+        dX = parseFloat(ball.attr('data-dX')),
+        dY = parseFloat(ball.attr('data-dY')),
+        size = ball.height();
+    if(x+dX+size > maxX || x+dX < 0) ball.attr('data-dX',(dX=-dX));
+    if(y+dY+size > maxY || y+dY < 0) ball.attr('data-dY',(dY=-dY));
+    ball.css({'top':y+dY,'left':x+dX});
+  });
+}
+
+// Move the balls back within the bounds of the container if the window (ergo, possibly the container) is resized. Because we're positioning from the top/left corners, we only have to worry about the bottom/right sides.
+function moveBallsIntoBounds() {
+  var maxX = container.width(),
+      maxY = container.height();
+  $('b',container).each(function(i,b) {
+    var ball = $(b),
+        pos = ball.position()
+        x = pos.left,
+        y = pos.top,
+        size = ball.height();
+    if (x+size > maxX) ball.css({ left: maxX-size+'px' });;
+    if (y+size > maxY) ball.css({ top: maxY-size+'px' });;
+  });
+}
