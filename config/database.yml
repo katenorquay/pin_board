@@ -12,5 +12,5 @@ production:
   encoding: unicode
   database: pinboarddprod
   pool: 5
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
+  username: <%= ENV['PROD_USERNAME'] %>
+  password: <%= ENV['PROD_PASSWORD'] %>
