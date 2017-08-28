@@ -62,7 +62,7 @@ body {
 .profile-pic {
   width: 100%;
   border-radius: 5px;
-  margin-top: 1.5%
+  margin-top: 1.5%;
 }
 
 
@@ -103,12 +103,14 @@ nav.navbar.navbar-default {
   padding-bottom: 0;
 }
 
-nav.navbar.navbar-default li > a {
-  color: white;
-  letter-spacing: 1px;
-  font-size: 20px;
-  padding-left: 25px;
-  font-family: Apercu-Mono;
+nav.navbar.navbar-default li {
+  a {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-left: 25px;
+    font-family: Apercu-Mono;
+  }
 }
 
 .nav.navbar-nav.navbar-right {
@@ -350,18 +352,30 @@ h2 {
   }
 }
 
-@media (max-width: 850px) {
-  nav.navbar.navbar-default li > a {
-    letter-spacing: 1px;
-    font-size: 15px;
-    padding-left: 15px;
+@media (max-width: 900px) {
+  .nav.navbar-nav.navbar-right {
+    margin-right: 5px;
+  }
+  nav.navbar.navbar-default li {
+    a { font-size: 15px;
+        color: white;
+        letter-spacing: 1px;
+        padding-left: 12px;
+    &.smaller-things {
+      font-size: 9px;
+      padding-left: 2px;
+    }
+  }
     float: right;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
+  .profile-pic {
+    margin-left: 20px;
+  }
   .image-container {
-    width: 70%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -393,12 +407,15 @@ h2 {
 }
 
 @media (max-width: 400px) {
-  nav.navbar.navbar-default li > a {
-    font-size: 12px;
-    padding-left: 10px;
-  }
-  .nav.navbar-nav.navbar-right {
-    margin-right: 15px;
+  nav.navbar.navbar-default li {
+    a {
+      font-size: 12px;
+      padding-left: 5px;
+    &.smaller-things {
+      font-size: 9px;
+      padding-left: 2px;
+    }
+    }
   }
   .main_title {
     font-size: 50px;
