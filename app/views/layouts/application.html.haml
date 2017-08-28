@@ -9,7 +9,7 @@
   %body
     %nav.navbar.navbar-default
       .navbar-brand
-        = link_to image_tag('handgesture.png'), root_path
+        = link_to image_tag('handgesture.png'), root_path, class: 'handgesture'
 
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
@@ -27,7 +27,7 @@
       - flash.each do |name, msg|
         = content_tag :div, msg, class: "alert alert-info"
       = yield
-    .footer
+    #footer
       .footer-container
         %a.button.footer-button{ :href => "mailto:norquaytess@gmail.com" }Email Me!
         %a.button.footer-button{ :href => "https://www.instagram.com/tessnorquay" }Follow Me!

@@ -5,5 +5,5 @@
 $ ->
   $('#pins').imagesLoaded ->
     $('#pins').masonry
-      itemSelector: '.box'
+      itemSelector: '.panel'
       isFitWidth: true

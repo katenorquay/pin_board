@@ -33,307 +33,112 @@
      src: local('Apercu-Mono'), local('Apercu-Mono'), url('Apercu-Mono.otf') format('truetype')
    }
 
-body {
- background-image: url('undies.png');
- background-size: 300px;
- background-repeat: repeat;
-}
-
-#about-body {
-  width: 100%;
-  background-color: #a300cc;
-  margin-top: 50px;
-  margin-bottom: 80px;
-  box-sizing: border-box;
-  padding: 20px;
-  display: inline-block;
-  color: white;
-  position: relative;
-}
-
-.image-container {
-  width: 20%;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  float: left;
-}
-
-.profile-pic {
-  width: 100%;
-  border-radius: 5px;
-  margin-top: 1.5%;
-}
+   $main_purple: #a300cc;
+   $bright_orange: #f84a21;
+   $main_white: #FFFFFF;
+   $light_gray: #e7e7e7;
+   $medium_gray: #868686;
+   $dark_gray: #474747;
 
 
-.about-text {
-  float: left;
-  box-sizing: border-box;
-  padding: 10px 20px;
-  width: 75%;
-  position: relative;
-  margin-top: -15px;
-  p {
-    font-size: 17px;
-  }
-}
+body {background-image:url('undies.png'); background-size:300px; background-repeat:repeat;}
+textarea {min-height: 250px;}
+.btn-primary {margin: 10px 0 10px 10px;}
+.about-intro::after {content: ""; display:table; clear:both;}
+.form-group {padding: 0 20px;}
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 100;
-  font-family: Apercu-Mono;
-}
+//Fonts
+h1 {font-family:LemonMilk; text-align:center; font-size:120px; color:$main_white; text-transform:uppercase;}
+h2 {font-family:LemonMilk; font-size:22px; margin:0; padding:25px 10px;}
+h3, h4, h5, h6 {font-family:Apercu-Mono;}
+.press-title { text-shadow: 2px 2px $dark_gray }
 
+//Nav
 nav {
 	box-shadow: 0 1px 2px 0 rgb(163, 0, 204);
   height: 100px;
   box-sizing: border-box;
 	.navbar-brand {
-		img {
-      width: 55px;
-      float: left;
-      margin-left: 30px;
-      cursor: pointer;
-		}
+    .handgesture:hover {background-color: $main_purple}
+    img {width:55px; float:left; margin-left:30px; cursor:pointer;}
 	}
 }
 
 nav.navbar.navbar-default {
-  background-color: #a300cc;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  background-color:$main_purple;
+  margin-bottom:0;
+  padding-bottom:0;
+  a {color: $main_white; font-size:20px; letter-spacing:1px; padding-left:25px; font-family:Apercu-Mono;}
 }
 
-nav.navbar.navbar-default li {
-  a {
-    color: white;
-    font-size: 20px;
-    letter-spacing: 1px;
-    padding-left: 25px;
-    font-family: Apercu-Mono;
+.nav.navbar-nav.navbar-right {margin: 25px 25px 0 0}
+
+//Sections
+#header {width:100%; background-image:url('header3.png'); background-size:cover; background-position:center; height:700px;
+  .main_title {margin-top:25%; position:absolute; top:0; left:0; width:100%; height:100%;}
+}
+
+#about-body {width:100%; background-color:$main_purple; color:$main_white; margin:60px 0; box-sizing:border-box; padding:20px;
+  .image-container {width:20%; margin:10px; float:left;
+    .profile-pic {width:100%; border-radius:5px; margin-top:20px;}
+  }
+  .about-text {float:left; box-sizing:border-box; padding:10px 20px; width:75%; position:relative;
+    p { font-size: 17px; }
   }
 }
 
-.nav.navbar-nav.navbar-right {
-  margin-top: 25px;
-  margin-right: 25px;
+#footer {box-shadow:0 1px 2px 0 rgb(163, 0, 204); border-top:1px solid $light_gray; width:100%; background-image:url('stickfigures.jpg'); background-repeat:repeat; background-size:350px; text-align:center; margin-top:80px; padding-bottom:30px;
+  .footer-container {width:100%; margin-top:25px; margin-bottom:5px; text-align:center;
+    .footer-button {padding-left:10px; text-align:center; background-color:$main_purple; display:inline-block; margin:10px; width:250px;
+    }
+  }
+  .email {font-family:LemonMilk; background-color:$bright_orange; color:$main_white; font-size:18px; max-width:525px; margin-left:auto; margin-right:auto; text-align:center; padding:10px 0;}
 }
 
-.footer {
-  box-shadow: 0 1px 2px 0 rgb(163, 0, 204);
-  border-top: 1px solid #e7e7e7;
-  width: 100%;
-  background-image: url('stickfigures.jpg');
-  background-repeat: repeat;
-  background-size: 350px;
-  margin-top: 80px;
-  text-align: center;
-  padding-bottom: 30px;
-}
 
-#pins {
-  margin: 0 auto;
-  width: 100%;
-  .box {
-	  width: 320px;
-	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-	  border-radius: 7px;
-	  text-align: center;
-    box-sizing: border-box;
-    padding: 10px;
-	  img {
-	  	max-width: 100%;
-	  	height: auto;
-	  }
-	  h2 {
-	  	font-size: 22px;
-	  	margin: 0;
-	  	padding: 25px 10px;
-
-	  	a {
-				color: #474747;
-	  	}
-	  }
-	  .user {
-	  	font-size: 12px;
-	  	border-top: 1px solid #EAEAEA;
-			padding: 15px;
-			margin: 0;
-	  }
+#pins {margin:0 auto; width:100%;
+  .panel {width: 320px; box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.22); border-radius:7px; text-align:center; box-sizing:border-box; padding:10px; margin:10px;
+	  img {max-width:100%; height:auto;}
+	  a {color: $dark_gray;}
+    .user {font-size:12px; border-top:1px solid $light_gray; padding:15px; margin:0;}
 	}
 }
 
 #edit_page {
 	.current_image {
-		img {
-			display: block;
-			margin: 20px 0;
-		}
+		img {display:block; margin:20px 0;}
 	}
 }
 
 #pin_show {
   margin-top: 25px;
-	.panel-heading {
-    padding: 20px;
-	}
-	.pin_image {
-		img {
-			max-width: 100%;
-			width: 100%;
-			display: block;
-			margin: 0 auto;
-		}
-	}
+	.panel-heading { padding:20px;
+	   img {width:100%; display:block; margin:0 auto;}
+   }
 	.panel-content {
     margin: 25px;
-		.description {
-			color: #868686;
-			line-height: 1.75;
-		}
+    .show-title {color:$dark_gray; font-size:30px; text-align:left; margin:0; margin-bottom:10px;}
+		.description {color:$medium_gray; line-height:1.75;}
 	}
-	.panel-footer {
-		padding: 20px 35px;
-		p {
-			margin: 0;
-		}
-		.user {
-			padding-top: 8px;
-		}
+	.panel-footer {padding: 20px 35px;
+		p { margin: 0; }
+		.user { padding-top: 8px; }
 	}
 }
 
-.show-title {
-  color: #474747;
-  font-size: 30px;
-  text-align: left;
-  margin: 0;
-  margin-bottom: 10px;
+.button {background-color:$bright_orange; color:$main_white; text-shadow:1px 1px $dark_gray; text-decoration:none; box-sizing:border-box; padding:10px; text-align:center; font-family:LemonMilk; cursor:pointer; font-size:30px; display:block; margin:20px 0;
+  &:visited { color: $main_white; }
+  &:hover {color: $main_white}
 }
 
-textarea {
-	min-height: 250px;
-}
+.leg {position:absolute; top:185px; right:325px;}
+.foot {width:160px; text-align:center; margin-top:-55px; margin-left:-30px;}
+.balls {width:100%; height:100%; position:absolute; left:0; right:0;}
 
-#header {
-  width: 100%;
-  background-image: url('header3.png');
-  background-size: cover;
-  background-position: center;
-  height: 700px;
-  display: inline-block;
-  position: relative;
-}
 
-.main_title {
-  margin-top: 25%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
-h1 {
-  text-align: center;
-  font-size: 120px;
-  color: white;
-  font-family: LemonMilk;
-  text-transform: uppercase;
-}
 
-h2 {
-  font-family: LemonMilk;
-}
 
-.button {
-  text-decoration: none;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-  background-color: #f84a21;
-  font-family: LemonMilk;
-  color: white;
-  font-size: 30px;
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 10px;
-  cursor: pointer;
-  text-shadow: 1px 1px #474747;
-}
-
-.button:visited {
-  color: white;
-}
-
-.button:hover {
-  color: white;
-}
-
-.footer-button {
-  padding-left: 10px;
-  text-align: center;
-  background-color: #a300cc;
-  display: inline-block;
-  margin: 10px;
-  width: 250px;
-}
-.footer-container {
-  width: 100%;
-  margin-top: 2.5em;
-  margin-bottom: 0.5em;
-  text-align: center;
-}
-
-.email {
-  font-family: LemonMilk;
-  background-color: #f84a21;
-  color: white;
-  font-size: 18px;
-  max-width: 525px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding: 10px 0;
-}
-
-.press-title {
-  text-shadow: 2px 2px #474747;
-}
-
-.about-intro::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.leg {
-  position: absolute;
-  top: 185px;
-  right: 325px;
-}
-
-.foot {
-  width: 160px;
-  text-align: center;
-  margin-top: -55px;
-  margin-left: -30px;
-}
-
-.form-group {
-  padding: 0 20px;
-}
-
-.btn-primary {
-  margin: 10px 0 10px 10px;
-}
-
-.balls {
- width: 100%;
- height: 100%;
- position: absolute;
- left: 0;
- right: 0;
-}
 
 @media (max-width: 1000px) {
   .leg {
@@ -358,7 +163,7 @@ h2 {
   }
   nav.navbar.navbar-default li {
     a { font-size: 15px;
-        color: white;
+        color: $main_white;
         letter-spacing: 1px;
         padding-left: 12px;
     &.smaller-things {
