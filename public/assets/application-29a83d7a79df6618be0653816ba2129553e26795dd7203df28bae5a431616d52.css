@@ -1,0 +1,578 @@
+/**** Base styles ****/
+
+nav#page-nav {
+  display: block;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+#container {
+  background: #FFF;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.box {
+  margin: 5px;
+  padding: 5px;
+  background: #D8D5D2;
+  font-size: 11px;
+  line-height: 1.4em;
+  float: left;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.box h2 {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+}
+
+.col1 { width: 80px; }
+.col2 { width: 180px; }
+.col3 { width: 280px; }
+.col4 { width: 380px; }
+.col5 { width: 480px; }
+
+.col1 img { max-width: 80px; }
+.col2 img { max-width: 180px; }
+.col3 img { max-width: 280px; }
+.col4 img { max-width: 380px; }
+.col5 img { max-width: 480px; }
+
+/**** Clearfix ****/
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+/**** Transitions ****/
+
+
+.transitions-enabled.masonry,
+.transitions-enabled.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.transitions-enabled.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.transitions-enabled.masonry  .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+
+/* disable transitions on container */
+.transitions-enabled.infinite-scroll.masonry {
+  -webkit-transition-property: none;
+     -moz-transition-property: none;
+      -ms-transition-property: none;
+       -o-transition-property: none;
+          transition-property: none;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+
+ */
+@font-face {
+  font-family: 'LemonMilk';
+  font-style: normal;
+  font-weight: 700;
+  src: local("LemonMilk"), local("LemonMilk"), url("LemonMilk.otf") format("truetype");
+}
+@font-face {
+  font-family: 'Apercu-Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Apercu-Mono"), local("Apercu-Mono"), url("Apercu-Mono.otf") format("truetype");
+}
+/* line 43, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+body {
+  background-image: url("undies.png");
+  background-size: 300px;
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+}
+
+/* line 44, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+textarea {
+  min-height: 250px;
+}
+
+/* line 45, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.btn-primary {
+  margin: 10px 0 10px 10px;
+}
+
+/* line 46, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.about-intro::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 47, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.form-group {
+  padding: 0 20px;
+}
+
+/* line 50, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+h1 {
+  font-family: LemonMilk;
+  text-align: center;
+  font-size: 120px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+/* line 51, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+h2 {
+  font-family: LemonMilk;
+  font-size: 20px;
+}
+
+/* line 52, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+h3, h4, h5, h6 {
+  font-family: Apercu-Mono;
+}
+
+/* line 53, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+p {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 54, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.press-title {
+  text-shadow: 2px 2px #474747;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 57, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+nav {
+  box-shadow: 0 1px 2px 0 #a300cc;
+  height: 100px;
+}
+/* line 58, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+nav .navbar-brand {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+/* line 59, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+nav .navbar-brand .handgesture:hover {
+  background-color: #a300cc;
+}
+/* line 60, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+nav .navbar-brand img {
+  width: 30px;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 64, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+nav.navbar.navbar-default {
+  background-color: #a300cc;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 66, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.nav.navbar-nav.navbar-right {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+/* line 67, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.nav.navbar-nav.navbar-right li {
+  display: inline-block;
+  padding-left: 15px;
+}
+/* line 68, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.nav.navbar-nav.navbar-right li a {
+  color: #FFFFFF;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: Apercu-Mono;
+  text-decoration: none;
+}
+/* line 69, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.nav.navbar-nav.navbar-right li a.admin-nav {
+  font-size: 8.5px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/* line 74, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#header-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 75, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#header-container .header {
+  width: 100%;
+  background-image: url("header5.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  position: relative;
+}
+/* line 76, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#header-container .header .main_title {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: auto;
+  font-size: 50px;
+}
+/* line 77, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#header-container .header .balls {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* line 81, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#about-body {
+  width: 80%;
+  background-color: #a300cc;
+  color: #FFFFFF;
+  margin: 60px 0;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 82, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#about-body .image-container {
+  width: 50%;
+  margin: 10px;
+  float: left;
+}
+/* line 83, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#about-body .image-container .profile-pic {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 0;
+}
+/* line 85, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#about-body .about-text {
+  float: left;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 75%;
+  position: relative;
+}
+/* line 86, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#about-body .about-text p {
+  font-size: 17px;
+}
+/* line 87, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#about-body .about-text h2 {
+  margin: 2px;
+}
+
+/* line 91, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#footer {
+  box-shadow: 0 1px 2px 0 #a300cc;
+  border-top: 1px solid #e7e7e7;
+  width: 100%;
+  background-image: url("stickfigures.jpg");
+  background-repeat: repeat;
+  background-size: 350px;
+  text-align: center;
+  margin-top: 80px;
+  padding-bottom: 30px;
+}
+/* line 92, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#footer .footer-container {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+/* line 93, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#footer .footer-container .footer-button {
+  padding-left: 10px;
+  text-align: center;
+  background-color: #a300cc;
+  display: inline-block;
+  margin: 10px;
+  width: 250px;
+}
+/* line 96, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#footer .email {
+  font-family: LemonMilk;
+  background-color: #f84a21;
+  color: #FFFFFF;
+  font-size: 18px;
+  max-width: 525px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* line 100, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pins {
+  margin: 0 auto;
+  width: 100%;
+}
+/* line 101, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pins .panel {
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  width: 320px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 7px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+}
+/* line 102, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pins img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 103, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pins a {
+  color: #474747;
+}
+/* line 104, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pins .user {
+  font-size: 12px;
+  border-top: 1px solid #e7e7e7;
+  padding: 15px;
+  margin: 0;
+}
+
+/* line 107, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.panel.panel-default {
+  background-color: #f5f5f5;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding-top: 5px;
+  text-align: center;
+}
+/* line 108, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.panel.panel-default .panel-body {
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  padding: 20px;
+  text-align: left;
+}
+/* line 109, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.panel.panel-default .panel-body label {
+  display: block;
+  margin: 0px 0px 5px;
+  font-size: 15px;
+}
+/* line 110, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.panel.panel-default .panel-body input {
+  margin: 10px;
+}
+/* line 111, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.panel.panel-default .panel-body textarea {
+  height: 100px;
+  padding: 5px 0px 0px 5px;
+  width: 70%;
+  margin: 10px;
+}
+/* line 113, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.panel.panel-default .panel-body .current_image img {
+  margin-bottom: 25px;
+}
+
+/* line 118, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.btn {
+  background-color: #f84a21;
+  border: none;
+  color: white;
+  font-size: 25px;
+  font-family: 'LemonMilk';
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+
+/* line 119, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.alert {
+  background-color: #e7e7e7;
+  width: 79%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20px;
+  padding: 5px;
+}
+
+/* line 122, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pin_show .panel {
+  background-color: #f5f5f5;
+  border: 1px solid transparent;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 20px;
+}
+/* line 124, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pin_show .panel .panel-heading img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 126, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pin_show .panel .panel-content {
+  padding: 10px 20px;
+  background-color: #FFFFFF;
+  border: solid 1px #e7e7e7;
+  margin-top: 5px;
+}
+/* line 127, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pin_show .panel .panel-content .show-title {
+  color: #474747;
+  font-size: 30px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 10px;
+}
+/* line 128, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pin_show .panel .panel-content .description {
+  color: #868686;
+  line-height: 1.75;
+}
+/* line 131, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+#pin_show .panel .panel-footer .user {
+  padding-top: 8px;
+}
+
+/* line 136, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.button {
+  background-color: #f84a21;
+  color: #FFFFFF;
+  text-shadow: 1px 1px #474747;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  font-family: LemonMilk;
+  cursor: pointer;
+  font-size: 25px;
+  display: block;
+  margin: 20px 0;
+}
+/* line 137, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.button:visited {
+  color: #FFFFFF;
+}
+/* line 138, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+.button:hover {
+  color: #FFFFFF;
+}
+
+@media (min-width: 1000px) {
+  /* line 144, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  #header-container .header {
+    background-image: url("header3.png");
+    height: 650px;
+  }
+  /* line 145, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  #header-container .header .main_title {
+    margin-top: 32%;
+    font-size: 110px;
+  }
+}
+@media (min-width: 675px) {
+  /* line 152, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  nav .navbar-brand {
+    top: 20px;
+  }
+  /* line 153, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  nav .navbar-brand img {
+    width: 55px;
+    margin-left: 30px;
+    margin-top: -2px;
+  }
+
+  /* line 156, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  .nav.navbar-nav.navbar-right {
+    top: 20px;
+    right: 25px;
+  }
+  /* line 158, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  .nav.navbar-nav.navbar-right li a {
+    font-size: 20px;
+    padding-left: 12px;
+  }
+  /* line 159, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  .nav.navbar-nav.navbar-right li a.admin-nav {
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  /* line 164, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  #about-body .image-container {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+  /* line 165, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  #about-body .image-container .profile-pic {
+    margin-left: 20px;
+  }
+  /* line 167, /Users/katenorquay/workspace/pin_board/app/assets/stylesheets/application.css.scss */
+  #about-body .about-text {
+    width: 50%;
+    display: inline-block;
+    margin-left: 50px;
+  }
+}
