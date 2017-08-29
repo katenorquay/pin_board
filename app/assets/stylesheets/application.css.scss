@@ -16,8 +16,8 @@
  *= require_self
  */
 
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
+ // @import 'bootstrap-sprockets';
+ // @import 'bootstrap';
 
  @font-face {
     font-family: 'LemonMilk';
@@ -36,12 +36,13 @@
    $main_purple: #a300cc;
    $bright_orange: #f84a21;
    $main_white: #FFFFFF;
+   $secondary_white: #f5f5f5;
    $light_gray: #e7e7e7;
    $medium_gray: #868686;
    $dark_gray: #474747;
 
 
-body {background-image:url('undies.png'); background-size:300px; background-repeat:repeat;}
+body {background-image:url('undies.png'); background-size:300px; background-repeat:repeat; margin:0; padding:0;}
 textarea {min-height: 250px;}
 .btn-primary {margin: 10px 0 10px 10px;}
 .about-intro::after {content: ""; display:table; clear:both;}
@@ -49,46 +50,43 @@ textarea {min-height: 250px;}
 
 //Fonts
 h1 {font-family:LemonMilk; text-align:center; font-size:120px; color:$main_white; text-transform:uppercase;}
-h2 {font-family:LemonMilk; font-size:20px; margin:0; padding-bottom: 10px;}
+h2 {font-family:LemonMilk; font-size:20px;}
 h3, h4, h5, h6 {font-family:Apercu-Mono;}
+p {font-family:verdana, arial, helvetica, sans-serif; font-size: 13px; line-height:18px;}
 .press-title { text-shadow: 2px 2px $dark_gray }
 
 //Nav
-nav {
-	box-shadow: 0 1px 2px 0 rgb(163, 0, 204);
-  height: 100px;
-  box-sizing: border-box;
-	.navbar-brand {
+nav {box-shadow: 0 1px 2px 0 rgb(163, 0, 204); height: 100px;
+	.navbar-brand {position:absolute; top:30px; left:20px;
     .handgesture:hover {background-color: $main_purple}
-    img {width:30px; float:left; margin: 10px 10px 0 0; cursor:pointer;}
+    img {width:30px; float:left; cursor:pointer;}
 	}
 }
 
-nav.navbar.navbar-default {
-  background-color:$main_purple;
-  margin-bottom:0;
-  padding-bottom:0;
-  li {display: inline-block;
-      a {color: $main_white; font-size:12px; letter-spacing:1px; padding-left:5px; font-family:Apercu-Mono;
+nav.navbar.navbar-default {background-color:$main_purple; margin-bottom:0; padding-bottom:0;}
+
+.nav.navbar-nav.navbar-right {position:absolute; top:30px; right:20px;
+  li {display:inline-block; padding-left:15px;
+      a {color: $main_white; font-size:15px; letter-spacing:1px; font-family:Apercu-Mono; text-decoration:none;
         &.admin-nav {font-size:8.5px; padding-left: 2px; padding-right: 2px;}
       }
+  }}
+
+//Sections
+#header-container { width: 80%; margin-left: auto; margin-right: auto;
+  .header {width:100%; background-image:url('header5.jpg'); background-size:cover; background-position:center; height:600px; position:relative;
+    .main_title {position: absolute; bottom: 0; left: 15px; right: auto; font-size: 50px;}
+    .balls {width:100%; height:100%; position:absolute; left:0; right:0;}
   }
 }
 
-.nav.navbar-nav.navbar-right {margin:25px 0 0 5px; float:right;}
-
-//Sections
-#header {width:100%; background-image:url('header5.jpg'); background-size:cover; background-position:center; height:600px; position:relative;
-  .main_title {position: absolute; bottom: 0; left: 15px; right: auto; font-size: 50px;}
-  .balls {width:100%; height:100%; position:absolute; left:0; right:0;}
-}
-
-#about-body {width:100%; background-color:$main_purple; color:$main_white; margin:60px 0; box-sizing:border-box; padding:20px;
+#about-body {width:80%; background-color:$main_purple; color:$main_white; margin:60px 0; box-sizing:border-box; padding:20px; margin-left:auto; margin-right:auto;
   .image-container {width:50%; margin:10px; float:left;
     .profile-pic {width:100%; border-radius:5px; margin-top:0;}
   }
   .about-text {float:left; box-sizing:border-box; padding:10px; width:75%; position:relative;
-    p { font-size: 17px; }
+    p { font-size: 17px;}
+    h2 {margin: 2px;}
   }
 }
 
@@ -102,7 +100,7 @@ nav.navbar.navbar-default {
 
 
 #pins {margin:0 auto; width:100%;
-  .panel {width: 320px; box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.22); border-radius:7px; text-align:center; box-sizing:border-box; padding:10px; margin:10px;
+  .panel {background-color:$main_white; border:1px solid transparent; width: 320px; box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.22); border-radius:7px; text-align:center; box-sizing:border-box; padding:10px; margin:10px;
 	  img {max-width:100%; height:auto;}
 	  a {color: $dark_gray;}
     .user {font-size:12px; border-top:1px solid $light_gray; padding:15px; margin:0;}
@@ -116,19 +114,18 @@ nav.navbar.navbar-default {
 }
 
 #pin_show {
-  margin-top: 25px;
-	.panel-heading { padding:20px;
-	   img {width:100%; display:block; margin:0 auto;}
-   }
-	.panel-content {
-    margin: 25px;
-    .show-title {color:$dark_gray; font-size:30px; text-align:left; margin:0; margin-bottom:10px;}
-		.description {color:$medium_gray; line-height:1.75;}
-	}
-	.panel-footer {padding: 20px 35px;
-		p { margin: 0; }
-		.user { padding-top: 8px; }
-	}
+  .panel {background-color:$secondary_white; border:1px solid transparent; width:70%; margin-left:auto; margin-right:auto; margin-top:50px; padding:20px;
+    .panel-heading {
+       img {width:100%; display:block; margin:0 auto;}
+     }
+    .panel-content {padding:10px 20px; background-color:$main_white; border: solid 1px $light_gray; margin-top:5px;
+      .show-title {color:$dark_gray; font-size:30px; text-align:left; margin:0; margin-bottom:10px;}
+      .description {color:$medium_gray; line-height:1.75;}
+    }
+    .panel-footer {
+      .user { padding-top: 8px; }
+    }
+  }
 }
 
 .button {background-color:$bright_orange; color:$main_white; text-shadow:1px 1px $dark_gray; text-decoration:none; box-sizing:border-box; padding:10px; text-align:center; font-family:LemonMilk; cursor:pointer; font-size:25px; display:block; margin:20px 0;
@@ -138,23 +135,26 @@ nav.navbar.navbar-default {
 
 
 @media (min-width: 1000px) {
-  #header {background-image:url('header3.png'); height:650px;
-    .main_title {margin-top:32%; font-size: 110px;}
+  #header-container {
+    .header {background-image:url('header3.png'); height:650px;
+      .main_title {margin-top:32%; font-size: 110px;}
+    }
   }
 }
 
 @media (min-width: 675px) {
   nav {
-    .navbar-brand {
+    .navbar-brand {top: 20px;
       img {width:55px; margin-left:30px; margin-top:-2px;}
     }
   }
-  nav.navbar.navbar-default {
+  .nav.navbar-nav.navbar-right {top: 20px; right:25px;
     li {
-      a {font-size:20px; padding-left:12px;}
+      a {font-size:20px; padding-left:12px;
+        &.admin-nav {font-size: 20px; padding-left: 5px; padding-right: 5px;}
+      }
     }
   }
-  .nav.navbar-nav.navbar-right {margin-right:25px;}
   #about-body {
     .image-container {width:25%; margin-left:auto; margin-right:auto; display:inline-block;
       .profile-pic {margin-left:20px;}
