@@ -10,9 +10,6 @@
         .row
           .col-md-6
           - if user_signed_in?
-          %p.user
-          Submitted by
-          = @pin.user.email
             .btn-group.pull-right
               = link_to "Edit", edit_pin_path, class: "btn btn-default"
               = link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
