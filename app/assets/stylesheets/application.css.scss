@@ -42,7 +42,7 @@
    $dark_gray: #474747;
 
 
-body {background-image:url('undies.png'); background-size:300px; background-repeat:repeat; margin:0; padding:0;}
+body {background-image:url('undies.png'); background-size:300px; background-repeat:repeat; margin:0; padding:0; font-family:verdana, arial, helvetica, sans-serif; font-size:13px;}
 textarea {min-height: 250px;}
 .btn-primary {margin: 10px 0 10px 10px;}
 .about-intro::after {content: ""; display:table; clear:both;}
@@ -100,12 +100,21 @@ nav.navbar.navbar-default {background-color:$main_purple; margin-bottom:0; paddi
 
 
 #pins {margin:0 auto; width:100%;
-  .panel {background-color:$main_white; border:1px solid transparent; width: 320px; box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.22); border-radius:7px; text-align:center; box-sizing:border-box; padding:10px; margin:10px;
-	  img {max-width:100%; height:auto;}
-	  a {color: $dark_gray;}
-    .user {font-size:12px; border-top:1px solid $light_gray; padding:15px; margin:0;}
-	}
+  .panel {background-color:$main_white; border:1px solid transparent; width: 320px; box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.22); border-radius:7px; text-align:center; box-sizing:border-box; padding:10px; margin:10px;}
+  img {max-width:100%; height:auto;}
+  a {color: $dark_gray;}
+  .user {font-size:12px; border-top:1px solid $light_gray; padding:15px; margin:0;}
 }
+
+  .panel.panel-default {background-color:$secondary_white; width:70%; margin-left:auto; margin-right:auto; margin-top:50px; padding-top: 5px; text-align: center;
+    .panel-body {background-color:$main_white; border:1px solid transparent; padding:20px; text-align: left;
+      label {display:block; margin:0px 0px 5px; font-size: 15px;}
+      input {margin: 10px;}
+      textarea {height:100px; padding:5px 0px 0px 5px; width:70%; margin:10px;}
+    }
+  }
+
+.btn {background-color:$bright_orange; border:none; color:white; font-size:25px; font-family:'LemonMilk'; box-sizing:border-box; padding:5px 10px;}
 
 #edit_page {
 	.current_image {
