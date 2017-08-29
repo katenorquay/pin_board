@@ -13,11 +13,11 @@
 
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
-          %li= link_to "New Pin", new_pin_path, class: "smaller-things"
-          %li= link_to "New Media", new_medium_path, class: "smaller-things"
-          %li= link_to "Media", media_path, class: "smaller-things"
-          %li= link_to "Account", edit_user_registration_path, class: "smaller-things"
-          %li= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "smaller-things"
+          %li= link_to "New Pin", new_pin_path, class: "admin-nav"
+          %li= link_to "New Media", new_medium_path, class: "admin-nav"
+          %li= link_to "Media", media_path, class: "admin-nav"
+          %li= link_to "Account", edit_user_registration_path, class: "admin-nav"
+          %li= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "admin-nav"
       - else
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "Gallery", "#pins-gallery"
