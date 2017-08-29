@@ -1,10 +1,9 @@
-#edit_page.col-md-8.col-md-offset-2
+.col-md-8.col-md-offset-2
   .row
     .panel.panel-default
-      .panel-heading
-        %h1 Edit Your Pin
+      %h2 edit pin
       .panel-body
         .current_image
-          %strong.center Current Image
+          %label Current Image
           = image_tag @pin.image.url(:medium)
         = render 'form'

@@ -53,7 +53,7 @@ h1 {font-family:LemonMilk; text-align:center; font-size:120px; color:$main_white
 h2 {font-family:LemonMilk; font-size:20px;}
 h3, h4, h5, h6 {font-family:Apercu-Mono;}
 p {font-family:verdana, arial, helvetica, sans-serif; font-size: 13px; line-height:18px;}
-.press-title { text-shadow: 2px 2px $dark_gray }
+.press-title { text-shadow: 2px 2px $dark_gray; margin-top: 10px; margin-bottom: 10px;}
 
 //Nav
 nav {box-shadow: 0 1px 2px 0 rgb(163, 0, 204); height: 100px;
@@ -111,16 +111,14 @@ nav.navbar.navbar-default {background-color:$main_purple; margin-bottom:0; paddi
       label {display:block; margin:0px 0px 5px; font-size: 15px;}
       input {margin: 10px;}
       textarea {height:100px; padding:5px 0px 0px 5px; width:70%; margin:10px;}
+      .current_image {
+        img {margin-bottom: 25px;}
+      }
     }
   }
 
 .btn {background-color:$bright_orange; border:none; color:white; font-size:25px; font-family:'LemonMilk'; box-sizing:border-box; padding:5px 10px;}
-
-#edit_page {
-	.current_image {
-		img {display:block; margin:20px 0;}
-	}
-}
+.alert {background-color:$light_gray; width:79%; margin-left:auto; margin-right:auto; height: 20px; padding: 5px;}
 
 #pin_show {
   .panel {background-color:$secondary_white; border:1px solid transparent; width:70%; margin-left:auto; margin-right:auto; margin-top:50px; padding:20px;
